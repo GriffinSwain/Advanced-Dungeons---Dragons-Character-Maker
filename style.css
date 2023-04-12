@@ -1,0 +1,24 @@
+.bg{
+    background-image: url(/Assets/Tabletop.png);
+    background-size: cover;
+}
+
+.bg2{
+    background-image: url(/Assets/BlackTableTop.png);
+    /* background-size: cover; */
+}
+
+
+
+.whiteText{
+    color: aliceblue;
+}
+
+.number{
+    margin-top: -8px;
+    margin-left: 20px;
+}
+
+.raceButton{
+    position: absolute;
+}
