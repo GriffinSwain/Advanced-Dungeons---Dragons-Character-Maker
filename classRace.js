@@ -50,7 +50,7 @@ let halfing = false;
 StatGetter();
 ClassDisplay();
 
-backButton.addEventListener('click', function(){
+backButton.addEventListener('click', function () {
     window.location = '/index.html';
 })
 
@@ -162,7 +162,7 @@ function ClassDisplay() {
         selectedRace.innerText = "";
         RacialStats();
         lastRace = "";
-        
+
         if (fighter) injectHere.appendChild(fighterBtn);
         if (paladin) injectHere.appendChild(paladinBtn);
         if (ranger) injectHere.appendChild(rangerBtn);
@@ -273,7 +273,9 @@ function RaceDisplay() {
     halfelfBtn.className = "btn btn-primary mt-1";
     halfelfBtn.addEventListener("click", function () {
         characterRace = "halfelf";
-        selectedRace.innerText = "Half-Elf"
+        RacialStats();
+        selectedRace.innerText = "Half-Elf";
+        lastRace = "halfelf";
     })
     let halflingBtn = document.createElement("Button");
     halflingBtn.innerText = "Halfling";
@@ -289,7 +291,9 @@ function RaceDisplay() {
     humanBtn.className = "btn btn-danger mt-1";
     humanBtn.addEventListener("click", function () {
         characterRace = "human";
+        RacialStats();
         selectedRace.innerText = "Human";
+        lastRace = "human";
     })
 
     if (dwarf) injectHere2.appendChild(dwarfBtn);
@@ -303,48 +307,50 @@ function RaceDisplay() {
 
 function RacialStats() {
 
-        switch (characterRace) {
-            case "dwarf":
-                console.log("Charsima down");
-                constitution++;
-                charisma--;
-                break;
-            case "elf":
-                dexterity++;
-                constitution--;
-                break;
-            case "gnome":
-                intelligence++;
-                wisdom--;
-                break;
-            case "halfling":
-                dexterity++;
-                strength--;
-                break;
-            default:
-                break;
-        }
+    switch (characterRace) {
+        case "dwarf":
+            console.log("Charsima down");
+            constitution++;
+            charisma--;
+            break;
+        case "elf":
+            dexterity++;
+            constitution--;
+            break;
+        case "gnome":
+            intelligence++;
+            wisdom--;
+            break;
+        case "halfling":
+            dexterity++;
+            strength--;
+            break;
+        default:
+            break;
+    }
 
-        switch (lastRace) {
-            case "dwarf":
-                console.log("Charsima up");
-                constitution--;
-                charisma++;
-                break;
-            case "elf":
-                dexterity--;
-                constitution++;
-                break;
-            case "gnome":
-                intelligence--;
-                wisdom++;
-                break;
-            case "halfling":
-                dexterity--;
-                strength++;
-                break;
-        }
-    
+    switch (lastRace) {
+        case "dwarf":
+            console.log("Charsima up");
+            constitution--;
+            charisma++;
+            break;
+        case "elf":
+            dexterity--;
+            constitution++;
+            break;
+        case "gnome":
+            intelligence--;
+            wisdom++;
+            break;
+        case "halfling":
+            dexterity--;
+            strength++;
+            break;
+        default:
+            break;
+    }
+
     racialStatChange = !racialStatChange;
 
     strengthStat.textContent = strength;
