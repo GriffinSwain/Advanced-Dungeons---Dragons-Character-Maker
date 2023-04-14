@@ -1,7 +1,8 @@
-import { saveToLocalStorage, getLocalStorage, removeFromLocalStorage } from './localStorage.js';
+import { saveCharacterToLocalStorage, getLocalStorage, removeFromLocalStorage } from './localStorage.js';
 
 let data;
 data = getLocalStorage();
+console.log(data);
 let choice = data.length - 1;
 
 let backButton = document.getElementById("backButton");
@@ -28,7 +29,6 @@ let intelligence = 0;
 let wisdom = 0;
 let charisma = 0;
 
-let racialStatChange = false;
 let lastRace = "";
 
 let fighter = false;
@@ -45,22 +45,22 @@ let dwarf = false;
 let elf = false;
 let gnome = false;
 let halfelf = false;
-let halfing = false;
+let halfling = false;
 
 StatGetter();
 ClassDisplay();
 
 backButton.addEventListener('click', function () {
-    window.location = '/index.html';
+    window.location = '../index.html';
 })
 
 function StatGetter() {
-    strength = data[choice][0];
-    dexterity = data[choice][1];
-    constitution = data[choice][2];
-    intelligence = data[choice][3];
-    wisdom = data[choice][4];
-    charisma = data[choice][5];
+    strength = data[0];
+    dexterity = data[1];
+    constitution = data[2];
+    intelligence = data[3];
+    wisdom = data[4];
+    charisma = data[5];
     strengthStat.textContent = strength;
     dexterityStat.textContent = dexterity;
     constitutionStat.textContent = constitution;
@@ -81,7 +81,7 @@ function ClassDisplay() {
 
     let fighterBtn = document.createElement("Button");
     fighterBtn.innerText = "Fighter";
-    fighterBtn.className = "btn btn-danger";
+    fighterBtn.className = "btn btn-danger mt-1";
     fighterBtn.addEventListener("click", function () {
         characterClass = "fighter";
         selectedClass.innerText = "Fighter";
@@ -160,7 +160,6 @@ function ClassDisplay() {
         injectHere.innerHTML = "";
         characterRace = "";
         selectedRace.innerText = "";
-        RacialStats();
         lastRace = "";
 
         if (fighter) injectHere.appendChild(fighterBtn);
@@ -186,130 +185,121 @@ function RaceDisplay() {
             elf = true;
             gnome = true;
             halfelf = true;
-            halfing = true;
+            halfling = true;
             break;
         case "paladin":
             dwarf = false;
             elf = false;
             gnome = false;
             halfelf = false;
-            halfing = false;
+            halfling = false;
             break;
         case "ranger":
             dwarf = false;
             elf = true;
             gnome = false;
             halfelf = true;
-            halfing = false;
+            halfling = false;
             break;
         case "mage":
             dwarf = false;
             elf = true;
             gnome = false;
             halfelf = true;
-            halfing = false;
+            halfling = false;
             break;
         case "cleric":
             dwarf = true;
             elf = true;
             gnome = true;
             halfelf = true;
-            halfing = true;
+            halfling = true;
             break;
         case "druid":
             dwarf = false;
             elf = false;
             gnome = false;
             halfelf = true;
-            halfing = false;
+            halfling = false;
             break;
         case "thief":
             dwarf = true;
             elf = true;
             gnome = true;
             halfelf = true;
-            halfing = true;
+            halfling = true;
             break;
         case "bard":
             dwarf = false;
             elf = false;
             gnome = false;
             halfelf = true;
-            halfing = false;
+            halfling = false;
             break;
-
     }
+    
+    if (strength < 8 || constitution < 11) dwarf = false;
+    if (dexterity < 6 || constitution < 7 || intelligence < 8 || charisma < 8) elf = false;
+    if (strength < 6 ||  constitution < 8 || intelligence < 6) gnome = false;
+    if (dexterity < 6 ||  constitution < 6 || intelligence < 4) halfelf = false;
+    if (strength < 7 || dexterity < 7 || constitution < 10 || intelligence < 6) halfling = false;
 
     let dwarfBtn = document.createElement("Button");
     dwarfBtn.innerText = "Dwarf";
     dwarfBtn.className = "btn btn-secondary mt-1";
     dwarfBtn.addEventListener("click", function () {
-
-        characterRace = "dwarf";
         selectedRace.innerText = "Dwarf"
-        RacialStats();
-        lastRace = "dwarf";
+        RacialStats("dwarf");
     })
     let elfBtn = document.createElement("Button");
     elfBtn.innerText = "Elf";
     elfBtn.className = "btn btn-success mt-1";
     elfBtn.addEventListener("click", function () {
-        characterRace = "elf";
         selectedRace.innerText = "Elf"
-        RacialStats();
-        lastRace = "elf";
+        RacialStats("elf");
     })
     let gnomeBtn = document.createElement("Button");
     gnomeBtn.innerText = "Gnome";
     gnomeBtn.className = "btn btn-info mt-1";
     gnomeBtn.addEventListener("click", function () {
-        characterRace = "gnome";
         selectedRace.innerText = "Gnome"
-        RacialStats();
-        lastRace = "gnome";
+        RacialStats("gnome");
     })
     let halfelfBtn = document.createElement("Button");
     halfelfBtn.innerText = "Half-elf";
     halfelfBtn.className = "btn btn-primary mt-1";
     halfelfBtn.addEventListener("click", function () {
-        characterRace = "halfelf";
-        RacialStats();
         selectedRace.innerText = "Half-Elf";
-        lastRace = "halfelf";
+        RacialStats("halfelf");
     })
     let halflingBtn = document.createElement("Button");
     halflingBtn.innerText = "Halfling";
     halflingBtn.className = "btn btn-warning mt-1";
     halflingBtn.addEventListener("click", function () {
-        characterRace = "halfling";
-        RacialStats();
         selectedRace.innerText = "Halfling";
-        lastRace = "halfling";
+        RacialStats();
     })
     let humanBtn = document.createElement("Button");
     humanBtn.innerText = "Human";
     humanBtn.className = "btn btn-danger mt-1";
     humanBtn.addEventListener("click", function () {
-        characterRace = "human";
-        RacialStats();
         selectedRace.innerText = "Human";
-        lastRace = "human";
+        RacialStats("human");
     })
 
     if (dwarf) injectHere2.appendChild(dwarfBtn);
     if (elf) injectHere2.appendChild(elfBtn);
     if (gnome) injectHere2.appendChild(gnomeBtn);
     if (halfelf) injectHere2.appendChild(halfelfBtn);
-    if (halfing) injectHere2.appendChild(halflingBtn);
+    if (halfling) injectHere2.appendChild(halflingBtn);
     injectHere2.appendChild(humanBtn);
 
 }
 
-function RacialStats() {
+function RacialStats(race) {
 
-    switch (characterRace) {
+    switch (race) {
         case "dwarf":
-            console.log("Charsima down");
             constitution++;
             charisma--;
             break;
@@ -331,7 +321,6 @@ function RacialStats() {
 
     switch (lastRace) {
         case "dwarf":
-            console.log("Charsima up");
             constitution--;
             charisma++;
             break;
@@ -349,9 +338,10 @@ function RacialStats() {
             break;
         default:
             break;
-    }
+        }
 
-    racialStatChange = !racialStatChange;
+            characterRace = race;
+            lastRace = race;
 
     strengthStat.textContent = strength;
     dexterityStat.textContent = dexterity;
@@ -359,5 +349,4 @@ function RacialStats() {
     intelligenceStat.textContent = intelligence;
     wisdomStat.textContent = wisdom;
     charismaStat.textContent = charisma;
-
 }

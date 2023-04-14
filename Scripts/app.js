@@ -12,7 +12,7 @@
    Their stats will be adjusted based on their race
 */
 
-import {saveToLocalStorage, getLocalStorage, removeFromLocalStorage} from './localStorage.js';
+import {saveStatsToLocalStorage, getLocalStorage, removeFromLocalStorage} from './localStorage.js';
 
 
 let rollButton = document.getElementById("rollButton");
@@ -159,7 +159,7 @@ continueButton.addEventListener('click', function(){
         finishedStats[4] = wisdom;
         finishedStats[5] = charisma;
         console.log(finishedStats);
-        saveToLocalStorage(finishedStats);
+        saveStatsToLocalStorage(finishedStats);
         window.location = '/Pages/classChoice.html';
     } 
 })
