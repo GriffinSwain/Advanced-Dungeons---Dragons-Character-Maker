@@ -6,6 +6,7 @@ console.log(data);
 let choice = data.length - 1;
 
 let backButton = document.getElementById("backButton");
+let continueButton = document.getElementById("continueButton");
 
 let injectHere = document.getElementById("injectHere");
 let injectHere2 = document.getElementById("injectHere2");
@@ -21,6 +22,7 @@ let charismaStat = document.getElementById("charismaStat");
 
 let characterClass = "";
 let characterRace = "";
+let finishedArray = [];
 
 let strength = 0;
 let dexterity = 0;
@@ -30,6 +32,7 @@ let wisdom = 0;
 let charisma = 0;
 
 let lastRace = "";
+let finished = false;
 
 let fighter = false;
 let paladin = false;
@@ -52,6 +55,14 @@ ClassDisplay();
 
 backButton.addEventListener('click', function () {
     window.location = '../index.html';
+})
+
+continueButton.addEventListener('click', function () {
+    if (finished){
+        console.log(finishedArray);
+        saveCharacterToLocalStorage(finishedArray);
+        // window.location = '../index.html';
+    }
 })
 
 function StatGetter() {
@@ -349,4 +360,13 @@ function RacialStats(race) {
     intelligenceStat.textContent = intelligence;
     wisdomStat.textContent = wisdom;
     charismaStat.textContent = charisma;
+    finishedArray[0] = strength;
+    finishedArray[1] = dexterity;
+    finishedArray[2] = constitution;
+    finishedArray[3] = intelligence;
+    finishedArray[4] = wisdom;
+    finishedArray[5] = charisma;
+    finishedArray[6] = characterClass;
+    finishedArray[7] = characterRace;
+    finished = true;
 }

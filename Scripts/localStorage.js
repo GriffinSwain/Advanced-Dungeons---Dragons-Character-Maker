@@ -19,7 +19,7 @@ function saveCharacterToLocalStorage(info){
     characters.push(info);
 
     //save updated array to local storage
-    localStorage.setItem('Character', JSON.stringify(stats));
+    localStorage.setItem('Character', JSON.stringify(info));
 }
 
 function getLocalStorage(){
