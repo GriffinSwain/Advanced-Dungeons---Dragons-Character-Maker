@@ -4,8 +4,10 @@
 }
 
 .bg2{
-    background-image: url(/Assets/BlackTableTop.png);
-    /* background-size: cover; */
+    background-image: url(/Assets/DarkNight.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 500px;
 }
 
 .classText{
@@ -33,6 +35,10 @@
     color: aliceblue;
 }
 
+.diagonal{
+margin-left: -15px;
+}
+
 .number{
     margin-top: -8px;
     margin-left: 20px;
@@ -40,4 +46,9 @@
 
 .raceButton{
     position: absolute;
+}
+
+.statContainer{
+    position: absolute;
+    margin-left: 45%;
 }
