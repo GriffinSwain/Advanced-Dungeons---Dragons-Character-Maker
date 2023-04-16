@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Berkshire;
+    src: url(/Assets/BerkshireSwash-Regular.ttf);
+}
+
 .bg{
     background-image: url(/Assets/Tabletop.png);
     background-size: cover;
@@ -29,8 +34,13 @@
     height: 50px;
 }
 
+.title{
+    
+}
+
 .whiteText{
     color: aliceblue;
+    font-family: Berkshire;
 }
 
 .number{

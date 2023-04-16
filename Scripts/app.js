@@ -49,6 +49,7 @@ let intelligence = 0;
 let wisdom = 0;
 let charisma = 0;
 let selectedClass = "";
+let statRolled = false;
 let rollDown = true;
 let threeDice = true;
 let continueCheck = false;
@@ -57,29 +58,30 @@ let continueCheck = false;
 
 rollDownButton.addEventListener('click', function(){
     rollDown = true;
-    rollDownButton.className = "btn btn-primary";
-    statChoiceButton.className = "btn btn-dark";
+    rollDownButton.className = "btn btn-primary floater";
+    statChoiceButton.className = "btn btn-dark shake";
 })
 
 statChoiceButton.addEventListener('click', function(){
     rollDown = false;
-    statChoiceButton.className = "btn btn-success";
-    rollDownButton.className = "btn btn-dark";
+    statChoiceButton.className = "btn btn-success floater";
+    rollDownButton.className = "btn btn-dark shake";
 })
 
 threeDiceButton.addEventListener('click', function(){
     threeDice = true;
-    threeDiceButton.className = "btn btn-danger";
-    fourDiceButton.className = "btn btn-dark";
+    threeDiceButton.className = "btn btn-danger floater";
+    fourDiceButton.className = "btn btn-dark shake";
 })
 
 fourDiceButton.addEventListener('click', function(){
     threeDice = false;
-    fourDiceButton.className = "btn btn-warning";
-    threeDiceButton.className = "btn btn-dark";   
+    threeDiceButton.className = "btn btn-dark shake";   
+    fourDiceButton.className = "btn btn-warning floater";
 })
 
 rollButton.addEventListener('click', function(){
+    rollButton.className = "btn btn-light";
     strength = 0;
     dexterity = 0;
     constitution = 0;
@@ -94,14 +96,17 @@ rollButton.addEventListener('click', function(){
     wisdomStat.innerText = "";
     charismaStat.innerText = "";
     StatTotal();
+    statRolled = true;
     rollButton.textContent = "Reroll Stats";
+    rollButton.className = "btn btn-light barrelRoll";
 })
 
 strengthText.addEventListener('click', function(){
-    if (strength == 0){
+    if (strength == 0 && statRolled){
         strengthStat.innerText = chooseStats[arrayPosition];
         strength = chooseStats[0];
         finishedStats[0] = strengthStat.textContent;
+        strengthText.className = "";
         continueCheck = true;
         FinishCheck()
     }
@@ -109,41 +114,46 @@ strengthText.addEventListener('click', function(){
 
 
 dexterityText.addEventListener('click', function(){
-    if (dexterity == 0){
+    if (dexterity == 0 && statRolled){
         dexterityStat.innerText = chooseStats[arrayPosition];
         dexterity = chooseStats[0];
+        dexterityText.className = "";
         FinishCheck()
     }
 })
 
 constitutionText.addEventListener('click', function(){
-    if (constitution == 0){
+    if (constitution == 0 && statRolled){
         constitutionStat.innerText = chooseStats[arrayPosition];
         constitution = chooseStats[0];
+        constitutionText.className = "";
         FinishCheck()
     }
 })
 
 intelligenceText.addEventListener('click', function(){
-    if (intelligence == 0){
+    if (intelligence == 0 && statRolled){
         intelligenceStat.innerText = chooseStats[arrayPosition];
         intelligence = chooseStats[0];
+        intelligenceText.className = "";
         FinishCheck()
     }
 })
 
 wisdomText.addEventListener('click', function(){
-    if (wisdom == 0){
+    if (wisdom == 0 && statRolled){
         wisdomStat.innerText = chooseStats[arrayPosition];
         wisdom = chooseStats[0];
+        wisdomText.className = "";
         FinishCheck()
     }
 })
 
 charismaText.addEventListener('click', function(){
-    if (charisma == 0){
+    if (charisma == 0 && statRolled){
         charismaStat.innerText = chooseStats[arrayPosition];
         charisma = chooseStats[0];
+        charismaText.className = "";
         console.log(arrayPosition);
         console.log(chooseStats[arrayPosition])
         FinishCheck()
@@ -169,7 +179,7 @@ function FinishCheck(){
         console.log (chooseStats);
         statDisplay.innerText = chooseStats;
         if(strength != 0 && dexterity != 0 && constitution != 0 && intelligence != 0 && wisdom != 0 && charisma != 0){
-            continueButton.className = "btn btn-success";
+            continueButton.className = "btn btn-success pulse";
             continueCheck = true;
         } 
 }
@@ -221,5 +231,13 @@ function StatTotal(){
         statDisplay.innerText = tempStat;
         chooseStats = tempStat;
         console.log(chooseStats);
+    }
+    if (!rollDown){
+        strengthText.className = "pulse";
+        dexterityText.className = "pulse";
+        constitutionText.className = "pulse";
+        intelligenceText.className = "pulse";
+        wisdomText.className = "pulse";
+        charismaText.className = "pulse";
     }
 }
