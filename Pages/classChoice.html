@@ -12,59 +12,83 @@
 </head>
 
 <body class="bg2">
-    <div style="position: absolute;" class="classText"><h1 class="whiteText">Testing</h1></div>
-    <div class="container d-flex flex-direction-column">
+    <div class="container d-flex justify-content-center">
+        <div style="position: absolute;" class="classText">
+            <h1 class="title">Choose your CLASS and RACE</h1>
+        </div>
+    </div>
+    <div class="container d-flex flex-direction-column mt-3">
         <div class="row mt-5">
-            <div class="col-6"></div>
-            <div class="col-6">
+            <div class="col-2"></div>
+            <div class="col-6 statContainer">
 
                 <div class="container d-flex justify-content-center whiteText">
-                    <h3 id="strengthText">Strength </h3>
-                    <h1 class="number" id="strengthStat"></h1>
+                    <h3 id="strengthText" class="statText">Strength</h3>
+                </div>
+                <div class="row d-flex justify-content-center whiteText">
+                    <h1 class="number" id="strengthStat" style="margin-left: 55%; margin-top: -15%;"></h1>
+                </div>
+                <div class="container d-flex justify-content-center whiteText statName">
+                    <h3 id="dexterityText" class="statText">Dexterity</h3>
+                </div>
+                <div class="row d-flex justify-content-center whiteText">
+                    <h1 class="number" id="dexterityStat" style="margin-left: 55%; margin-top: -16%;"></h1>
+                </div>
+                <div class="container d-flex justify-content-center whiteText statName">
+                    <h3 id="constitutionText" class="statText">Constitution</h3>
                 </div>
                 <div class="container d-flex justify-content-center whiteText">
-                    <h3 id="dexterityText">Dexterity</h3>
-                    <h1 class="number" id="dexterityStat"></h1>
+                    <h1 class="number" id="constitutionStat" style="margin-left: -5%; margin-top: -18%;"></h1>
                 </div>
                 <div class="container d-flex justify-content-center whiteText">
-                    <h3 id="constitutionText">Constitution</h3>
-                    <h1 class="number" id="constitutionStat"></h1>
+                    <h3 id="intelligenceText" class="statText">Intelligence</h3>
+                </div>
+                <div class="row d-flex justify-content-center whiteText">
+                    <h1 class="number" id="intelligenceStat" style="margin-left: 50%; margin-top: -15%;"></h1>
                 </div>
                 <div class="container d-flex justify-content-center whiteText">
-                    <h3 id="intelligenceText">Intelligence</h3>
-                    <h1 class="number" id="intelligenceStat"></h1>
+                    <h3 id="wisdomText" class="statText">Wisdom</h3>
+                </div>
+                <div class="row d-flex justify-content-center whiteText">
+                    <h1 class="number" id="wisdomStat" style="margin-left: 50%; margin-top: -15%;"></h1>
                 </div>
                 <div class="container d-flex justify-content-center whiteText">
-                    <h3 id="wisdomText">Wisdom</h3>
-                    <h1 class="number" id="wisdomStat"></h1>
+                    <h3 id="charismaText" class="statText">Charisma</h3>
                 </div>
-                <div class="container d-flex justify-content-center whiteText">
-                    <h3 id="charismaText">Charisma</h3>
-                    <h1 class="number" id="charismaStat"></h1>
+                <div class="row d-flex justify-content-center whiteText">
+                    <h1 class="number" id="charismaStat" style="margin-left: 55%; margin-top: -10%;"></h1>
                 </div>
 
-                <h1 id="selectedClass" class="whiteText"></h1>
-                <h1 id="selectedRace" class="whiteText"></h1>
+                <h1 id="selectedClass" class=" infoText" style="margin-left: -10%;">Testing</h1>
+                <h1 id="selectedRace" class=" infoText" >Testing2</h1>
             </div>
         </div>
-            <!-- <div class="col-3"></div> -->
-            <div class="row mt-5">
-                <div class="col-4"></div>
-                <div class="col-3">
-                    <div id="injectHere"></div>
-                </div>
+        <!-- <div class="col-3"></div> -->
+        <div class="row mt-5">
+            <div class="col-4"></div>
+            <div class="col-3">
+                <div id="injectHere"></div>
             </div>
-            <div class="row mt-5">
+        </div>
+        <div class="row mt-5">
 
-                <div class="col-6">
-                    
-                    <div id="injectHere2"></div>
+            <div class="col-2 raceInjection">
+                <div class="container d-flex flex-direction-column">
+
+                    <div id="injectHere2" class=""></div>
                 </div>
             </div>
+        </div>
     </div>
-    <div class="container d-flex justify-content-center mt-5">
-        <button type="button" class="btn btn-light backButton" id="backButton">Back</button>
-        <button type="button" class="btn btn-primary continueButton" id="continueButton">Continue</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <button type="button" class="btn btn-light" id="backButton">Back</button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary continueButton" id="continueButton">Continue</button>
+            </div>
+        </div>
     </div>
     <script src="/Scripts/classRace.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

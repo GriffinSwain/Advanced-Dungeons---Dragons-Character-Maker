@@ -3,51 +3,141 @@
     src: url(/Assets/BerkshireSwash-Regular.ttf);
 }
 
-.bg{
+@font-face {
+    font-family: TiltPrism;
+    src: url(/Assets/TiltPrism-Regular.ttf);
+}
+
+.bg {
     background-image: url(/Assets/Tabletop.png);
     background-size: cover;
 }
 
-.bg2{
-    background-image: url(/Assets/BlackTableTop.png);
-    /* background-size: cover; */
+.bg2 {
+    background-image: url(/Assets/DarkNight.png);
+    background-size:auto;
+    /* background-repeat: no-repeat; */
 }
 
-.classText{
+.classText {
     position: absolute;
-    margin-left: 70%;
+    /* margin-left: 70%; */
+
 }
 
-.backButton{
+.statName {
+    margin-top: -10%;
+
+}
+
+.buttonContainer {
     position: absolute;
-    margin-top: -23%;
-    margin-left: -85%;
-    width: 100px;
+    /* bottom: 55%; */
+    top: 40%;
+    /* right: 13%; */
+}
+
+.infoText{
+    font-family: TiltPrism;
+    color:  white;
+    font-size: 50px;
+}
+
+.title {
+    font-family: TiltPrism;
+    color: white;
+    font-size: 50px;
+    }
+
+@media (max-width: 768px) {
+    
+    /* adjust the breakpoint as needed */
+    .buttonContainer {
+        position: absolute;
+        top: 10%;
+    }
+    
+    /* .backButton {
+        position: absolute;
+        margin-top: -23%;
+        margin-left: -85%;
+        width: 100px;
     height: 50px;
+} */
+
+.infoText{
+    font-family: TiltPrism;
+    color:  white;
+    font-size: 50px;
 }
 
-.continueButton{
-    position: absolute;
-    margin-top: -18%;
-    margin-left: -85%;
-    width: 100px;
-    height: 50px;
 }
 
-.title{
+@media (min-width: 769px) {
+    
+    .raceInjection{
+        margin-left: -20%;
+    }
+
+    .statText{
+        font-size: 40px;
+    }
     
 }
 
-.whiteText{
+
+@media (max-width: 768px) and (min-width: 501px) {
+
+    .raceInjection{
+        margin-top: -50%;
+        margin-left: -15%;
+    }
+
+    .statContainer{
+        /* margin-left: -20%; */
+    }
+
+
+}
+
+@media (max-width: 500px) {
+
+    /* adjust the breakpoint as needed */
+
+
+    .statContainer{
+        /* margin-left: -20%; */
+    }
+
+    .raceInjection{
+        margin-left: 15%;
+    }
+    
+    .title {
+    font-family: TiltPrism;
+    color: white;
+    font-size: 23px;
+    margin-top: 5%;
+    }
+
+}
+
+
+.mainChoiceButton{
+    width: 80px;
+    height: 50px;
+}
+
+.whiteText {
     color: aliceblue;
     font-family: Berkshire;
 }
 
-.number{
-    margin-top: -8px;
-    margin-left: 20px;
+.number {
+    /* margin-top: -8px; */
+    margin-left: 25px;
 }
 
-.raceButton{
+.raceButton {
     position: absolute;
 }

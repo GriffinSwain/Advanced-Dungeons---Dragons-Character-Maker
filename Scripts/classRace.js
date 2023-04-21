@@ -31,7 +31,6 @@ let intelligence = 0;
 let wisdom = 0;
 let charisma = 0;
 
-let lastRace = "";
 let finished = false;
 
 let fighter = false;
@@ -171,7 +170,6 @@ function ClassDisplay() {
         injectHere.innerHTML = "";
         characterRace = "";
         selectedRace.innerText = "";
-        lastRace = "";
 
         if (fighter) injectHere.appendChild(fighterBtn);
         if (paladin) injectHere.appendChild(paladinBtn);
@@ -309,6 +307,13 @@ function RaceDisplay() {
 
 function RacialStats(race) {
 
+    strength = data[0];
+    dexterity = data[1];
+    constitution = data[2];
+    intelligence = data[3];
+    wisdom = data[4];
+    charisma = data[5];
+
     switch (race) {
         case "dwarf":
             constitution++;
@@ -330,29 +335,7 @@ function RacialStats(race) {
             break;
     }
 
-    switch (lastRace) {
-        case "dwarf":
-            constitution--;
-            charisma++;
-            break;
-        case "elf":
-            dexterity--;
-            constitution++;
-            break;
-        case "gnome":
-            intelligence--;
-            wisdom++;
-            break;
-        case "halfling":
-            dexterity--;
-            strength++;
-            break;
-        default:
-            break;
-        }
-
             characterRace = race;
-            lastRace = race;
 
     strengthStat.textContent = strength;
     dexterityStat.textContent = dexterity;
