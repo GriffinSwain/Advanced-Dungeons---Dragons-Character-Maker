@@ -58,26 +58,26 @@ let continueCheck = false;
 
 rollDownButton.addEventListener('click', function(){
     rollDown = true;
-    rollDownButton.className = "btn btn-primary floater";
+    rollDownButton.className = "btn btn-primary pulse";
     statChoiceButton.className = "btn btn-dark shake";
 })
 
 statChoiceButton.addEventListener('click', function(){
     rollDown = false;
-    statChoiceButton.className = "btn btn-success floater";
+    statChoiceButton.className = "btn btn-success pulse";
     rollDownButton.className = "btn btn-dark shake";
 })
 
 threeDiceButton.addEventListener('click', function(){
     threeDice = true;
-    threeDiceButton.className = "btn btn-danger floater";
+    threeDiceButton.className = "btn btn-danger pulse";
     fourDiceButton.className = "btn btn-dark shake";
 })
 
 fourDiceButton.addEventListener('click', function(){
     threeDice = false;
     threeDiceButton.className = "btn btn-dark shake";   
-    fourDiceButton.className = "btn btn-warning floater";
+    fourDiceButton.className = "btn btn-warning pulse";
 })
 
 rollButton.addEventListener('click', function(){

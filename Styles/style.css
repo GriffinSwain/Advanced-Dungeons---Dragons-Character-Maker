@@ -49,6 +49,10 @@
     font-size: 50px;
     }
 
+    .raceButton{
+        /* margin-left: -5%; */
+    }
+
 @media (max-width: 768px) {
     
     /* adjust the breakpoint as needed */
@@ -76,11 +80,31 @@
 @media (min-width: 769px) {
     
     .raceInjection{
-        margin-left: -20%;
+        /* background-color: aquamarine; */
+        position: absolute;
+        left: 40%;
+        min-width: 50px;
+        max-width: 80px;
     }
 
     .statText{
         font-size: 40px;
+    }
+
+    .classInfo{
+        position: absolute;
+        color: white;
+        left: 55%;
+        top: 5%;
+        white-space: pre-line;
+    }
+
+    .raceInfo{
+        position: absolute;
+        color: white;
+        left: 55%;
+        top: 5%;
+        white-space: pre-line;
     }
     
 }
