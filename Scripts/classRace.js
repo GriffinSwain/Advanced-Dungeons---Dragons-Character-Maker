@@ -4,6 +4,7 @@ let data;
 data = getLocalStorage();
 console.log(data);
 let choice = data.length - 1;
+let classData;
 
 let backButton = document.getElementById("backButton");
 let continueButton = document.getElementById("continueButton");
@@ -49,19 +50,30 @@ let gnome = false;
 let halfelf = false;
 let halfling = false;
 
-StatGetter();
-ClassDisplay();
+async function GetJson() {
+    await fetch('../data/class.json').then(
+        response => response.json()
+    ).then(
+        data => {
+            classData = data;
+        })
+        console.log(classData);
+    }
+    
+    StatGetter();
+    ClassDisplay();
 
 backButton.addEventListener('click', function () {
     window.location = '../index.html';
 })
 
 continueButton.addEventListener('click', function () {
-    if (finished){
-        console.log(finishedArray);
-        saveCharacterToLocalStorage(finishedArray);
-        // window.location = '../index.html';
-    }
+    // if (finished){
+    //     console.log(finishedArray);
+    //     saveCharacterToLocalStorage(finishedArray);
+    //     // window.location = '../index.html';
+    // }
+    GetJson();
 })
 
 function StatGetter() {
