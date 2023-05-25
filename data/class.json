@@ -58,25 +58,6 @@
             }
         },
         {
-            "className" : "Thief", 
-            "Description" : "The thief is a romantic hero fired by noble purpose but a little wanting in strength of character. Such a person may truly strive for good but continually run afoul of temptation.",
-            "mainStat" : "Dexterity, 9 required",
-            "hitDie" : " 1d6 + 'HP Adjustment' per level",
-            "startingWealth" : "2d6 x 10 gp to purchase starting equipment with. Can keep left over money.",
-            "nameLevel" : "10th Level",
-            "Weapons" : "Club, Dagger, Dart, Hand Crossbow, Knife, Lasso, Short Bow, Sling, Broad Sword, Long Sword, Short Sword, and Staff",
-            "Armor" : "Can wear any, but metal armor worsens abilities.",
-            "THAC0Improvement" : "THAC0 Improvement/Level: 1/2",
-            "Proficiencies" : {
-                "Weapon":  "Starts at level 1 with 2 Weapon Proficiency Slots. Gains a Weapon Proficiency Slot every multiple of 4 levels",
-                "nonWeapon" : "Starts with 3 Non-Weapon Proficiencies. Gains a Non-Weapon Proficiency every multiple of 4 levels."
-              },
-            "Abilities" : {
-                "abilityOverview" : "Thief Skills: At 1st level, thieves can distribute 60 percentile points to their thief skills. Each time a thief levels up, they gain another 30 points to distribute, with no more than 15 points being assigned to a single skill per level up.",
-                "abilityInfo" : "The Thief Skills available are: Pick Pocket, Open Locks, Find/Remove Traps, Move Silently, Hide in Shadows, Detect Noise, Climb Walls, and Read Languages."
-            }
-        },
-        {
             "className" : "Mage", 
             "Description" : "The Mage is Wizard who has no speciality in any school of magic. Mages are considered Generalist Wizards instead of a Specialist Wizard.",
             "mainStat" : "Intelligence, 9 Required",
@@ -151,6 +132,25 @@
             "Abilities" : {
                 "abilityOverview" : "Druids have access to a number of spheres of spells to cast.",
                 "abilityInfo" : "Major Spheres: all, animal, elemental, healing, plant, and weather. Minor Spheres: divination"
+            }
+        },
+        {
+            "className" : "Thief", 
+            "Description" : "The thief is a romantic hero fired by noble purpose but a little wanting in strength of character. Such a person may truly strive for good but continually run afoul of temptation.",
+            "mainStat" : "Dexterity, 9 required",
+            "hitDie" : " 1d6 + 'HP Adjustment' per level",
+            "startingWealth" : "2d6 x 10 gp to purchase starting equipment with. Can keep left over money.",
+            "nameLevel" : "10th Level",
+            "Weapons" : "Club, Dagger, Dart, Hand Crossbow, Knife, Lasso, Short Bow, Sling, Broad Sword, Long Sword, Short Sword, and Staff",
+            "Armor" : "Can wear any, but metal armor worsens abilities.",
+            "THAC0Improvement" : "THAC0 Improvement/Level: 1/2",
+            "Proficiencies" : {
+                "Weapon":  "Starts at level 1 with 2 Weapon Proficiency Slots. Gains a Weapon Proficiency Slot every multiple of 4 levels",
+                "nonWeapon" : "Starts with 3 Non-Weapon Proficiencies. Gains a Non-Weapon Proficiency every multiple of 4 levels."
+              },
+            "Abilities" : {
+                "abilityOverview" : "Thief Skills: At 1st level, thieves can distribute 60 percentile points to their thief skills. Each time a thief levels up, they gain another 30 points to distribute, with no more than 15 points being assigned to a single skill per level up.",
+                "abilityInfo" : "The Thief Skills available are: Pick Pocket, Open Locks, Find/Remove Traps, Move Silently, Hide in Shadows, Detect Noise, Climb Walls, and Read Languages."
             }
         }
     ]

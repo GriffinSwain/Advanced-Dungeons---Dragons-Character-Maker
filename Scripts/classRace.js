@@ -19,11 +19,14 @@ let dexterityStat = document.getElementById("dexterityStat");
 let constitutionStat = document.getElementById("constitutionStat");
 let intelligenceStat = document.getElementById("intelligenceStat");
 let wisdomStat = document.getElementById("wisdomStat");
-let charismaStat = document.getElementById("charismaStat");
+let charismaStat = document.getElementById("charismaStat"); 
+
+let classBasics = document.getElementById("classBasics");
 
 let characterClass = "";
 let characterRace = "";
 let finishedArray = [];
+let classStartingInfo;
 
 let strength = 0;
 let dexterity = 0;
@@ -50,6 +53,8 @@ let gnome = false;
 let halfelf = false;
 let halfling = false;
 
+GetJson();
+
 async function GetJson() {
     await fetch('../data/class.json').then(
         response => response.json()
@@ -73,7 +78,7 @@ continueButton.addEventListener('click', function () {
     //     saveCharacterToLocalStorage(finishedArray);
     //     // window.location = '../index.html';
     // }
-    GetJson();
+    console.log(classStartingInfo);
 })
 
 function StatGetter() {
@@ -107,6 +112,7 @@ function ClassDisplay() {
     fighterBtn.addEventListener("click", function () {
         characterClass = "fighter";
         selectedClass.innerText = "Fighter";
+        classStartingInfo = classData.Classes[0];
         AppendClass();
         RaceDisplay();
     })
@@ -116,6 +122,7 @@ function ClassDisplay() {
     paladinBtn.addEventListener("click", function () {
         characterClass = "paladin";
         selectedClass.innerText = "Paladin";
+        classStartingInfo = classData.Classes[1];
         AppendClass();
         RaceDisplay();
     })
@@ -125,6 +132,7 @@ function ClassDisplay() {
     rangerBtn.addEventListener("click", function () {
         characterClass = "ranger";
         selectedClass.innerText = "Ranger";
+        classStartingInfo = classData.Classes[2];
         AppendClass();
         RaceDisplay();
     })
@@ -134,6 +142,7 @@ function ClassDisplay() {
     mageBtn.addEventListener("click", function () {
         characterClass = "mage";
         selectedClass.innerText = "Mage";
+        classStartingInfo = classData.Classes[3];
         AppendClass();
         RaceDisplay();
     })
@@ -143,6 +152,7 @@ function ClassDisplay() {
     clericBtn.addEventListener("click", function () {
         characterClass = "cleric";
         selectedClass.innerText = "Cleric";
+        classStartingInfo = classData.Classes[4];
         AppendClass();
         RaceDisplay();
     })
@@ -152,6 +162,7 @@ function ClassDisplay() {
     druidBtn.addEventListener("click", function () {
         characterClass = "druid";
         selectedClass.innerText = "Druid";
+        classStartingInfo = classData.Classes[6];
         AppendClass();
         RaceDisplay();
     })
@@ -161,6 +172,7 @@ function ClassDisplay() {
     thiefBtn.addEventListener("click", function () {
         characterClass = "thief";
         selectedClass.innerText = "Thief";
+        classStartingInfo = classData.Classes[7];
         AppendClass();
         RaceDisplay();
     })
@@ -171,6 +183,7 @@ function ClassDisplay() {
 
         characterClass = "bard";
         selectedClass.innerText = "Bard";
+        classStartingInfo = classData.Classes[5];
         AppendClass();
         RaceDisplay();
     })
@@ -199,6 +212,9 @@ function ClassDisplay() {
 function RaceDisplay() {
 
     injectHere2.innerHTML = "";
+
+    classBasics.textContent = classStartingInfo.className;
+    classBasics.textContent += classStartingInfo.startingWealth;
 
     switch (characterClass) {
         case "fighter":
@@ -348,7 +364,6 @@ function RacialStats(race) {
     }
 
             characterRace = race;
-
     strengthStat.textContent = strength;
     dexterityStat.textContent = dexterity;
     constitutionStat.textContent = constitution;
