@@ -11,12 +11,50 @@
             "Armor" : "Can wear any armor.",
             "THAC0Improvement" : "THAC0 Improvement/Level: 1/1",
             "Proficiencies" : {
-                "Weapon":  "Starts at level 1 with 2 Weapon Proficiency Slots. Gains a Weapon Proficiency Slot every multiple of 4 levels",
+                "Weapon":  "Starts at level 1 with 4 Weapon Proficiency Slots. Gains a Weapon Proficiency Slot every multiple of 4 levels",
                 "nonWeapon" : "Starts at level 1 with 3 Nonweapon Proficiencies Slots. Gains a Non-Weapon Proficiency every multiple of 3 levels. Can chose a Nonweapon Proficiency at normal cost in the General and Warrior categories and from any other category for +1 cost."
               },
             "Abilities" : {
                 "abilityOverview" : "Weapon Specialization: Invest two proficiency slots to specialize in a weapon. Three proficiency slots are required for bows.",
                 "abilityInfo" : "Specialization for melee weapons confers a +1 bonus to all attacks and +2 to all damage. Specialization for ranged weapons gives point blank range. Within point blank range there is a +2 to all attack rolls. Point Blank range also allows one ranged attack be made before initiative is rolled. Specialization in a weapon also gives extra attacks sooner than non specialized weapons"
+            }
+        },
+        {
+            "className" : "Paladin", 
+            "Description" : "The paladin is a warrior bold and pure, the exemplar of everything good and true. Like the fighter, the paladin is a person of combat. However, the paladin lives for the ideals of righteousness, justice, honesty, piety, and chivalry.",
+            "mainStat" : "Strength & Charisma",
+            "hitDie" : "1d10 + 'HP Adjustment' per level.",
+            "startingWealth" : "5d4 x 10 gp. A paladin must tithe to whatever institution of lawful good alignment they serve. A tithe is 10% of the paladin's income and whatever other wealth they own. It must be paid immediately.",
+            "nameLevel" : "9th Level",
+            "Weapons" : "Can use any weapon.",
+            "Armor" : "Can wear any armor.",
+            "THAC0Improvement" : "THAC0 Improvement/Level: 1/1",
+            "Proficiencies" : {
+                "Weapon":  "Starts at level 1 with 4 Weapon Proficiency Slots. Gains a Weapon Proficiency Slot every multiple of 3 levels",
+                "nonWeapon" : "Starts at level 1 with 3 Nonweapon Proficiencies Slots. Gains a Non-Weapon Proficiency every multiple of 3 levels. Can chose a Nonweapon Proficiency at normal cost in the General and Warrior categories and from any other category for +1 cost."
+              },
+            "Abilities" : {
+                "abilityOverview" : "Weapon Specialization: Invest two proficiency slots to specialize in a weapon. Three proficiency slots are required for bows.",
+                "abilityInfo" : "Specialization for melee weapons confers a +1 bonus to all attacks and +2 to all damage. Specialization for ranged weapons gives point blank range. Within point blank range there is a +2 to all attack rolls. Point Blank range also allows one ranged attack be made before initiative is rolled. Specialization in a weapon also gives extra attacks sooner than non specialized weapons"
+            }
+        },
+        {
+            "className" : "Ranger", 
+            "Description" : "The ranger is a warrior and a woodsman. They are skilled with weapons and is knowledgeable in tracking and woodcraft. The ranger often protects and guides lost travelers and honest peasant-folk.",
+            "mainStat" : "Strength, Dexterity, and Wisdom",
+            "hitDie" : "1d10 + 'HP Adjustment' per level",
+            "startingWealth" : "5d4 x 10 gp to purchase starting equipment with. Can keep left over money, but Rangers cannot have more treasure than they can carry.",
+            "nameLevel" : "9th Level",
+            "Weapons" : "Can use any weapon.",
+            "Armor" : "Can wear any armor, but some abilities require light armor.",
+            "THAC0Improvement" : "THAC0 Improvement/Level: 1/1",
+            "Proficiencies" : {
+                "Weapon":  "Starts at level 1 with 4 Weapon Proficiency Slots. Gains a Weapon Proficiency Slot every multiple of 3 levels",
+                "nonWeapon" : "Starts at level 1 with 3 Nonweapon Proficiencies Slots. Ranger's start with Tracking Proficiency Gains a Non-Weapon Proficiency every multiple of 3 levels. Can chose a Nonweapon Proficiency at normal cost in the General and Warrior categories and from any other category for +1 cost."
+              },
+            "Abilities" : {
+                "abilityOverview" : "Favored Enemy: Before advancing to 2nd level, every ranger must select a species enemy. (Ex: giants, orcs, lizard men, trolls, and ghouls)",
+                "abilityInfo" : "Thereafter, whenever the ranger encounters that enemy, he gains a +4 bonus to his attack rolls. This enmity can be concealed only with great difficulty, so the ranger suffers a -4 penalty on all encounter reactions with creatures of the hated type."
             }
         },
         {
@@ -42,7 +80,7 @@
             "className" : "Mage", 
             "Description" : "The Mage is Wizard who has no speciality in any school of magic. Mages are considered Generalist Wizards instead of a Specialist Wizard.",
             "mainStat" : "Intelligence, 9 Required",
-            "hitDie" : "1d4 + HP Adjustment per level",
+            "hitDie" : "1d4 + 'HP Adjustment' per level",
             "startingWealth" : "(1d4+1) * 10 gp. Can keep left over money.",
             "nameLevel" : "10th Level",
             "Weapons" : "Dagger, Staff, Darts, Knives, and Slings.",
@@ -62,7 +100,7 @@
             "className" : "Cleric", 
             "Description" : "The Cleric is a generic priest (of any mythos) who tends to the needs of a community. He is both protector and healer. When evil threatens, the cleric is well-suited to seek it out on its own ground and destroy it.",
             "mainStat" : "Wisdom, 9 Required",
-            "hitDie" : "1d8 + HP Adjustment",
+            "hitDie" : "1d8 + 'HP Adjustment' per level",
             "startingWealth" : "3d6 x 10 gp for starting equipment. Can only keep 3 gold, rest is given back to superiors",
             "nameLevel" : "10th Level",
             "Weapons" : "Only blunt, bludgeoning weapons. (Different Cleric Orders may have different rules for allowable weapons)",
@@ -75,6 +113,44 @@
             "Abilities" : {
                 "abilityOverview" : "Clerics have access to a number of spheres of spells to cast. What spheres they have access is determined to what patron diety they follow or order they belong to.",
                 "abilityInfo" : "Major Spheres: All, Astral, Charm, Combat, Creation, Divination, Guardian, Healing, Necromantic, Protection, Summoning, Sun. Minor Spheres: Elemental"
+            }
+        },
+        {
+            "className" : "Bard", 
+            "Description" : "Bards make their way in life by their charm, talent, and wit. A good bard should be glib of tongue, light of heart, and fleet of foot (when all else fails).",
+            "mainStat" : "Dextertiy & Charisma",
+            "hitDie" : "1d6 + 'HP Adjustment' per level",
+            "startingWealth" : "2d6 x 10 gp. Can keep left over money.",
+            "nameLevel" : "10th Level",
+            "Weapons" : "Can use any weapon.",
+            "Armor" : "Can wear any armor up to and including chain mail, but cannot use shields.",
+            "THAC0Improvement" : "THAC0 Improvement/Level: 2/3",
+            "Proficiencies" : {
+              "Weapon":  "Starts with 2 Weapon Proficiency. Gains a Weapon Proficiency Slot every multiple of 4 levels",
+              "nonWeapon" : "Starts with 3 Non-Weapon Proficiencies. Gains a Non-Weapon Proficiency every multiple of 4 levels. Can chose a Nonweapon Proficiency at normal cost in the General and Rogue categories and one from any other category at +1 cost."
+            },
+            "Abilities" : {
+                "abilityOverview" : "At 2nd level, Bards have a limited ability to cast wizard spells. They start 2nd level knowing four spells.",
+                "abilityInfo" : " If casting spells, they must still abide by the same restrictions as a wizard (e.g no armor). Bards do not gain additional spells from leveling up; all spells must be found while adventuring. A bard's spellcasting level is equal to their bard level."
+            }
+        },
+        {
+            "className" : "Druid", 
+            "Description" : "The druid serves the cause of nature and neutrality; the wilderness is their community. They use their special powers to protect it and to preserve balance in the world.",
+            "mainStat" : "Wisdom & Charisma",
+            "hitDie" : "1d8 + 'HP Adjustment' per level",
+            "startingWealth" : "3d6 x 10 gp for starting equipment. Can only keep 3 gold, rest is given back to superiors",
+            "nameLevel" : "9th Level",
+            "Weapons" : "Club, sickle, dart, spear, dagger, scimitar, sling, and staff.",
+            "Armor" : "only 'natural' armors—padded, hide, or leather armors and wooden shields, including those with magical enhancements",
+            "THAC0Improvement" : "THAC0 Improvement/Level: 2/3",
+            "Proficiencies" : {
+              "Weapon":  "Starts with 2 Weapon Proficiency. Gains a Weapon Proficiency Slot every multiple of 4 levels",
+              "nonWeapon" : "Starts with 4 Non-Weapon Proficiencies. Gains a Non-Weapon Proficiency every multiple of 3 levels. Can chose a Nonweapon Proficiency at normal cost in the General and Priest categories and +1 cost from any other category"
+            },
+            "Abilities" : {
+                "abilityOverview" : "Druids have access to a number of spheres of spells to cast.",
+                "abilityInfo" : "Major Spheres: all, animal, elemental, healing, plant, and weather. Minor Spheres: divination"
             }
         }
     ]
