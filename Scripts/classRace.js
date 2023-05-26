@@ -21,7 +21,16 @@ let intelligenceStat = document.getElementById("intelligenceStat");
 let wisdomStat = document.getElementById("wisdomStat");
 let charismaStat = document.getElementById("charismaStat"); 
 
-let classBasics = document.getElementById("classBasics");
+let className = document.getElementById("className");
+let classDescription = document.getElementById("classDescription");
+let classStat = document.getElementById("classStat");
+let classWealth = document.getElementById("classWealth");
+let classAbility = document.getElementById("classAbility");
+let classAbilityInfo = document.getElementById("classAbilityInfo");
+let weaponProficiencies = document.getElementById("weaponProficiencies");
+let nonweaponProficiencies = document.getElementById("nonweaponProficiencies");
+
+
 
 let characterClass = "";
 let characterRace = "";
@@ -213,8 +222,16 @@ function RaceDisplay() {
 
     injectHere2.innerHTML = "";
 
-    classBasics.textContent = classStartingInfo.className;
-    classBasics.textContent += classStartingInfo.startingWealth;
+    className.textContent = classStartingInfo.className;
+    classDescription.textContent = classStartingInfo.Description;
+    classStat.textContent = "Main stat: " + classStartingInfo.mainStat;
+    classWealth.textContent = "Starting Wealth: " + classStartingInfo.startingWealth;
+    classAbility.textContent = "Abilities: " + classStartingInfo.Abilities.abilityOverview;
+    classAbilityInfo.textContent = "" + classStartingInfo.Abilities.abilityInfo;
+    weaponProficiencies.textContent = `Weapon Proficiencies: ` + classStartingInfo.Proficiencies.Weapon;
+    nonweaponProficiencies.textContent = `Non-Weapon Proficiencies: ` + classStartingInfo.Proficiencies.nonWeapon;
+
+
 
     switch (characterClass) {
         case "fighter":
